@@ -18,7 +18,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" debug="false">
     <appender name="CustomAppender" class="com.github.dadiyang.appender.LogbackAppender">
-        <!-- 这里填写集群名称 -->
+        <!-- 这里填写自定义配置项 -->
         <appName>test_logback_appender_app</appName>
     </appender>
     <root level="INFO">
@@ -32,7 +32,8 @@
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
-<configuration status="WARN">
+<!-- 这里 packages 要添加我们自定义 appender 所在的包 -->
+<configuration status="WARN" packages="com.github.dadiyang.appender">
     <appenders>
         <!-- 这个就是自定义的Appender -->
         <Log4j2Appender name="CustomAppender" appName="test_logback_appender_app"/>

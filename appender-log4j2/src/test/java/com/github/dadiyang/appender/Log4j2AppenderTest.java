@@ -1,4 +1,4 @@
-package com.github.dadiyang;
+package com.github.dadiyang.appender;
 
 import org.junit.Test;
 import org.slf4j.Logger;

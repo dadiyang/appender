@@ -15,7 +15,7 @@ import java.io.Serializable;
 /**
  * 自定义实现log4j2的输出源
  *
- * @author huangxuyang
+ * @author dadiyang
  * @since 2019/4/30
  */
 @Plugin(name = "Log4j2Appender", category = "Core", elementType = "appender", printObject = true)
@@ -43,12 +43,16 @@ public final class Log4j2Appender extends AbstractAppender {
         String msg = event.getMessage().getFormattedMessage();
         String threadName = event.getThreadName();
         Throwable throwable = event.getThrown();
+        // todo 这里实现自定义的日志处理逻辑
         System.out.println(appName + ": 自定义 log4j2 appender, threadName: " + threadName + ", level: " + level + ", loggerName: " + loggerName + ", msg: " + msg);
         if (throwable != null) {
             throwable.printStackTrace();
         }
     }
 
+    /**
+     * log4j2 使用 appender 插件工厂，因此传参可以直接通过 PluginAttribute 注解注入
+     */
     @PluginFactory
     public static Log4j2Appender createAppender(
             @PluginAttribute("name") String name,
