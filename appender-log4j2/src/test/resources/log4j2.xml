@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration status="INFO" monitorInterval="30">
+    <appenders>
+        <!-- 这个就是自定义的Appender -->
+        <Log4j2Appender name="CustomAppender" appName="appender_test"/>
+    </appenders>
+
+    <loggers>
+        <root level="DEBUG">
+            <appender-ref ref="CustomAppender"/>
+        </root>
+    </loggers>
+</configuration>
